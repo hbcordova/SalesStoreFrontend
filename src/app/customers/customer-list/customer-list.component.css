@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 95%;
   max-width: 1200px;
   margin: 50px auto;
 }
@@ -8,9 +8,43 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-weight: bold;
 }
 
 table {
   width: 100%;
+}
+
+.btn-add {
+  border-radius: 8px;
+  background-color: #5cb85c;
+}
+
+.btn-edit {
+  color: #f0ad4e;
+}
+
+.btn-delete {
+  color: #d9534f;
+}
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+@media(max-width: 720px) {
+  .btn-add {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+  }
 }

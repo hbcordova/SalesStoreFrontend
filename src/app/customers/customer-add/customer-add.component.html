@@ -1,1 +1,62 @@
-<p>customer-add works!</p>
+<h2 *ngIf="customerId == 0; else createNewCustomer;" mat-dialog-title>Agregar nuevo cliente</h2>
+<ng-template #createNewCustomer>
+  <h2 mat-dialog-title>Actualizar cliente</h2>
+</ng-template>
+<mat-dialog-content class="mat-typography">
+  <div [formGroup]="customerForm" class="fields">
+    <mat-form-field class="field">
+      <mat-label>Company Name</mat-label>
+      <input id="companyName" required formControlName="companyName" matInput>
+      <mat-error *ngIf="companyName?.invalid">{{ getErrorMessage('companyName', "Company name", 5, 30) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Contact Name</mat-label>
+      <input id="contactName" required formControlName="contactName" matInput>
+      <mat-error *ngIf="contactName?.invalid">{{ getErrorMessage('contactName', "Contact name", 5, 30) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Contact Title</mat-label>
+      <input id="contactTitle" required formControlName="contactTitle" matInput>
+      <mat-error *ngIf="contactTitle?.invalid">{{ getErrorMessage('contactTitle', "Contact title", 5, 30) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Address</mat-label>
+      <input id="address" required formControlName="address" matInput>
+      <mat-error *ngIf="address?.invalid">{{ getErrorMessage('address', "Address", 5, 255) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>City</mat-label>
+      <input id="city" required formControlName="city" matInput>
+      <mat-error *ngIf="city?.invalid">{{ getErrorMessage('city', "City", 3, 58) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Region</mat-label>
+      <input id="region" required formControlName="region" matInput>
+      <mat-error *ngIf="region?.invalid">{{ getErrorMessage('region', "Region", 3, 30) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Postal Code</mat-label>
+      <input id="postalCode" required formControlName="postalCode" matInput type="number">
+      <mat-error *ngIf="postalCode?.invalid">{{ getErrorMessage('postalCode', "Postal code", 6, 6) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Country</mat-label>
+      <input id="country" required formControlName="country" matInput>
+      <mat-error *ngIf="country?.invalid">{{ getErrorMessage('country', "Country", 3, 40) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Phone</mat-label>
+      <input id="phone" required formControlName="phone" matInput type="number">
+      <mat-error *ngIf="phone?.invalid">{{ getErrorMessage('phone', "Phone", 9, 9) }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label>Fax</mat-label>
+      <input id="fax" required formControlName="fax" matInput type="number">
+      <mat-error *ngIf="fax?.invalid">{{ getErrorMessage('fax', "Fax", 10, 10) }}</mat-error>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="sendHandler()" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

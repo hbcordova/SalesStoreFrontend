@@ -10,12 +10,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CustomerRemoveComponent } from './customers/customer-remove/customer-remove.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerListComponent,
-    CustomerAddComponent
+    CustomerAddComponent,
+    CustomerRemoveComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,12 @@ import { CustomerAddComponent } from './customers/customer-add/customer-add.comp
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

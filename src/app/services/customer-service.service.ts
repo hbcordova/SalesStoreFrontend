@@ -20,6 +20,10 @@ export class CustomerServiceService {
     return axios.get(`${this.url}?page=${pageIndex}&size=${pageSize}`, { headers: this.headers});
   }
 
+  getById(id: number) {
+    return axios.get(`${this.url}/${id}`, { headers: this.headers});
+  }
+
   post(save: Customer) {
     return axios.post<Customer>(this.url, save, { headers: this.headers});
   }
